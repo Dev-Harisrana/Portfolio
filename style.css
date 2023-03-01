@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@tailwind base;
 
+@tailwind components;
+
+@tailwind utilities;
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +13,14 @@
   scrollbar-width: thin;
   scrollbar-color: #551a8b;
   overflow-x: hidden;
+}
+.hdsticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: aliceblue;
+  z-index: 1000;
+  transition: 0.01s;
 }
 
 a {
@@ -23,6 +35,7 @@ nav {
   margin-left: 0px;
   margin-right: 15px;
   overflow: hidden;
+  height:50px;
 }
 nav h2 a{
   color:#551a8b;
@@ -109,7 +122,7 @@ nav ul li a:hover:after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(236, 210, 210);
+  /* background-color: rgb(236, 210, 210); */
   color: rgb(245, 244, 244);
   border: 2px solid white;
   border-radius: 15px;
@@ -120,6 +133,12 @@ nav ul li a:hover:after {
   position: fixed;
   right: 10vw;
   z-index: 51;
+  background: rgba(255, 255, 255, 0.9);
+border-radius:20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3)
 }
 
 .mobile-menu {
@@ -131,14 +150,7 @@ nav ul li a:hover:after {
   width: 100%;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: aliceblue;
-  z-index: 1000;
-  transition: 0.01s;
-}
+
 /* styling the hero section */
 .main {
     z-index: 0;
@@ -146,7 +158,7 @@ nav ul li a:hover:after {
   
   div.hero {
     width: 100vw;
-    background-image: url(/assets/images/);
+    background-image:url(/assets/images/Abstract\ Paper.svg);
     height: 500px;
     display: flex;
     justify-content: center;
@@ -217,72 +229,7 @@ nav ul li a:hover:after {
     font-size: 20px;
   }
   
-  /* styling the about section  */
-  /* .container {
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    min-width: 100vw;
-    height: auto;
-    margin: 0;
-    padding: 10px 0;
-    /* background: gainsboro; */
-  } */
   
-  .rows {
-    display: flex;
-    max-width: 100vw;
-    height: auto;
-    align-items: center;
-    justify-content: space-evenly;
-    overflow: hidden;
-  }
-  .rows h2 {
-    overflow: hidden;
-  }
-  .about-content,
-  .about-content p {
-    color: gray;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    float: left;
-    overflow: hidden;
-  }
-  .about-content p {
-    text-decoration: none;
-    width: auto;
-    text-transform: uppercase;
-    max-width: 40vw;
-  }
-  .about-content span {
-    color: #fd4766;
-    font-weight: 600;
-  }
-  
-  .about-img {
-    display: flex;
-    align-items: center;
-    padding-left: 100px;
-  }
-  
-  .about-img img {
-    width: 400px;
-    height: auto;
-    float: right;
-    border: 2px solid white;
-    border-radius: 15px;
-  }
-  
-  /* Hidding overflow of element */
-  #myHeader h2,
-  .about-content h2,
-  .about-content h3 {
-    overflow: hidden;
-  }
 @media (max-width:752px){
     .d{
         display:none;
@@ -290,6 +237,145 @@ nav ul li a:hover:after {
     #hamburger-icon{
         display: block;
     }}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* now styling the skill section */
+.container-skills{
+  color:#fd4766;
+  display:flex;
+  flex-direction: column;
+  width:100vw;
+  height:600px;
+background:rgb(253, 253, 253);}
+.container-skills h2{
+  color:#551a8b;
+}
+.container-skills p{
+  color:black;
+  text-align: center;
+  display:block;
+}
+
+.skill{
+  margin:110px 10px;
+  width: 100vw;
+  height:auto;;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: calc(100px);
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.square {
+  margin:0px;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  background: rgb(248, 248, 248);
+  box-shadow: (10px black ,5px white);
+  justify-content: center;
+  position: relative;
+  margin:20px 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+
+}
+.square p{
+  display:block;
+  margin-bottom:-10px;
+}
+.square:hover{
+  scale:calc(1.2);
+  transition:0.1s ease-in-out;
+  z-index: 1;
+}
+.progressbar{
+  margin:5px 0px
+}
+
+.outer {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  top:-2px;
+  border: 2px solid white;
+  border-radius: 90px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+      6px 6px 10px -1px rgba(255, 2550, 255, 0.7);
+  padding: 0px;
+}
+
+.inner {
+  margin: 15px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 90px;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+      inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+      -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+      0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+      0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.inner p{
+  display:absolute;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+circle {
+  fill:none;
+  stroke:#fd4766;
+  stroke-width:20px;
+  stroke-dasharray:441;
+  stroke-dashoffset:441;
+  /* animation:myprogress  1 2s linear forwards; */
+  
+  
+}
+#circle-1{animation:myprogress90 2s linear forwards;}
+#circle-2{animation:myprogress80 2s linear forwards;}
+#circle-3,#circle-4{animation:myprogress50 2s linear forwards;}
+
+svg {
+  position: absolute;
+  top: -4px;
+  left: -1px;
+}
+.number{
+  margin:auto;
+  width:100px;
+  height: auto;
+  position:absolute;
+  bottom:50px;
+  left:30px;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+@keyframes myprogress90{
+  from{
+      stroke-dashoffset:441;
+  }
+  to{
+      stroke-dashoffset:44;
+  }
+  
+}
+@keyframes myprogress80{
+  from{
+      stroke-dashoffset:441;
+  }
+  to{
+      stroke-dashoffset:88;
+  }
+  
+}
+@keyframes myprogress50{
+  from{
+      stroke-dashoffset:441;
+  }
+  to{
+      stroke-dashoffset:220;
+  }
+  
+}
