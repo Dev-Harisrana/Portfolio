@@ -277,6 +277,8 @@ background:rgb(253, 253, 253);}
   position: relative;
   margin:20px 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+  border: 1px;
+  border-radius:40px;
 
 }
 .square p{
